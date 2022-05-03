@@ -1,22 +1,10 @@
 const express = require('express');
-// const secureRandom = require('secure-random');
-var crypto = require('crypto');
+const otp = require('./api/otp');
 
-var secureVal = 0;
+const app = express;
 
-const app = express();
+const PORT = process.enx.PORT || 3000;
 
-app.get('/getOTP', async (req, res) => {
-    var Number = getRandomNumber();
-    console.log(Number);
-    res.send({"RandomNumber":Number});
-   });
+app.use("/api/otp", otp);
 
-
-function getRandomNumber(){
-    const n = crypto.randomInt(99999, 1000000);
-    var verificationCode = n.toString().padStart(6, "0");
-    return verificationCode;
-}
-
-app.listen(3000);
+app.listen(PORT, ()=> console.log(`server is running in port ${PORT}`));
