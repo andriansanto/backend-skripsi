@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "crypto": "^1.0.1",
+    "express-rate-limit": "^6.4.0",
     "express.js": "^1.0.0",
     "firebase": "^9.7.0",
     "secure-random": "^1.1.2"
