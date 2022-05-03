@@ -8,7 +8,7 @@ var crypto = require('crypto');
  * 
  * @return otp code | empty
  */
-router.get('/', async (req, res) => {
+router.get('/getOTP', async (req, res) => {
     try {
         var Number = getRandomNumber();
         console.log(Number);
