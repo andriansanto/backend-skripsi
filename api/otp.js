@@ -12,10 +12,10 @@ router.get('/', async (req, res) => {
     try {
         var Number = getRandomNumber();
         console.log(Number);
-        res.json({
+        res.json([{
             status: 200,
             RandomNumber: Number,
-        });
+        }]);
     } catch (error) {
         console.error(error);
         return res.status(500).send("server error");
