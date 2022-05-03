@@ -3,7 +3,7 @@ const otp = require('./api/otp');
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5050;
 
 app.use("/api/otp", otp);
 

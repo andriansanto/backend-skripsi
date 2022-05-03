@@ -3,12 +3,23 @@ const router = express.Router();
 
 var crypto = require('crypto');
 
-
-
-router.get('/getOTP', async (req, res) => {
-    var Number = getRandomNumber();
-    console.log(Number);
-    res.send({"RandomNumber":Number});
+/**
+ * GET OTP CODe
+ * 
+ * @return otp code | empty
+ */
+router.get('/', async (req, res) => {
+    try {
+        var Number = getRandomNumber();
+        console.log(Number);
+        res.json({
+            status: 200,
+            RandomNumber: Number,
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send("server error");
+    }
    });
 
 
