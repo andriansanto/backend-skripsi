@@ -8,6 +8,7 @@ const app = express();
 
 app.get('/getOTP', async (req, res) => {
     var Number = getRandomNumber();
+    console.log(Number);
     res.send({"RandomNumber":Number});
    });
 
