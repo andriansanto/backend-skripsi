@@ -6,7 +6,7 @@ const req_ip = require('request-ip');
 const app = express();
 const limiter = rate_limit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // Limit to 10 requests (here, per 15 minutes)
+    max: 10, // Limit to 10 requests (here, per 15 minutes)
     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
     keyGenerator: (req,res) =>{
